@@ -1,0 +1,25 @@
+.phrase {
+    font-size: 20px;
+}
+
+.digi {
+    font-size: 20px;
+    height: 130px;
+    border: 3px solid black;
+}
+
+.disable-digi {
+    background-color: lightgray;
+}
+
+.icons {
+    vertical-align: middle;
+}
+
+.red-border{
+    border: 3px solid red;
+}
+
+.green-border{
+    border: 3px solid green;
+}

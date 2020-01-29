@@ -5,23 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-    <h1>Alura Typer</h1>
-    <p class="phrase">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At risus viverra adipiscing at in tellus. Lacus sed viverra tellus in. Malesuada fames ac turpis egestas integer eget. Nulla posuere sollicitudin aliquam ultrices sagittis.</p>
-    <ul class="info">
-        <li><spam id="phrase-size">30</spam> words</li>
-        <li><spam id="time-digi">10</spam> seconds</li>
-    </ul>
-    <textarea class="digi" rows="8" cols="40"></textarea>
-    <button id="restart">Restart</button>
-    <ul class="info">
-        <li><spam id="counter-c">0</spam> caracters</li>
-        <li><spam id="counter-w">0</spam> words</li>
-    </ul>
+    <body>
+        <div class="container">
+            <h1 class="center">Alura Typer</h1>
+            <p class="phrase">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At risus viverra adipiscing at in tellus. Lacus sed viverra tellus in. Malesuada fames ac turpis egestas integer eget. Nulla posuere sollicitudin aliquam ultrices sagittis.</p>
+            <ul class="info center">
+                <li>
+                    <i class="small material-icons icons">description</i>
+                    <spam id="phrase-size">30</spam> words
+                </li>
+                <li>
+                    <i class="small material-icons icons">query_builder</i>
+                    <spam id="time-digi">10</spam> seconds
+                </li>
+            </ul>
+            <textarea class="digi" rows="8" cols="40"></textarea>
+            <div class="buttons">
+                <a class="btn-floating btn-large waves-effect waves-light red" id="restart">
+                    <i class="material-icons">restore</i>
+                </a>
+            </div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
+            <ul class="info center">
+                <li><spam id="counter-c">0</spam> caracters</li>
+                <li><spam id="counter-w">0</spam> words</li>
+            </ul>
 
-</body>
+            <section class="score">
+                <h3 class="center">Score</h3>
+                <table class="centered bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Words</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Doug</td>
+                            <td>10</td>
+                            <td><a href="#"><i class="small material-icons remove">delete_forever</i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Maggie</td>
+                            <td>10</td>
+                            <td><a href="#"><i class="small material-icons remove">delete_forever</i></a></td>
+                        </tr>
+                        <tr>
+                            <td>George</td>
+                            <td>10</td>
+                            <td><a href="#"><i class="small material-icons remove">delete_forever</i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Thrudy</td>
+                            <td>10</td>
+                            <td><a href="#"><i class="small material-icons remove">delete_forever</i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
 </html>
