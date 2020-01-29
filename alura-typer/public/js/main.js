@@ -15,7 +15,7 @@ $(document).ready(function() {
     phraseSizeUpdate()
     counterInit()
     chronoInit()
-    $('#restart').click(restartGame())
+    $('#restart').click(restartGame)
 })
 
 function phraseSizeUpdate() {
@@ -54,11 +54,11 @@ function chronoInit() {
 
 // Restart Button
 function restartGame() {
-    // .click() é o atalho para .on('click')
+    // // .click() é o atalho para .on('click')
     camp.attr('disabled',false)
     camp.val('')
     $('#counter-w').text('0')
     $('#counter-c').text('0')
     $('#time-digi').text(initialTime)
-    chronoInit()
+    chronoInit()  
 }
