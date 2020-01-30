@@ -96,7 +96,7 @@ function insertScore() {
     var numWords = $('#counter-w').text()
 
     var line = newTr(user, numWords)
-    line.find('.remove').click(rmLine)
+    line.find('.remove').click(rmLine())
     tbody.prepend(line)
 
 }
@@ -107,7 +107,7 @@ function newTr(user, words) {
     var colWords = $('<td>').text(words)
     var colRemove = $('<td>')
 
-    var link = $('<a>').addClass('remove').attr('href', '#')
+    var link = $('<a>').attr('href', '#').addClass('remove')
     var icon = $('<i>').addClass('small').addClass('material-icons').text('delete-forever')
 
     link.append(icon)
@@ -117,6 +117,8 @@ function newTr(user, words) {
     line.append(colWords)
     line.append(colRemove)
 }
+
+$(".remove").click(rmLine)
 
 function rmLine(event) {
     event.preventDefault()
