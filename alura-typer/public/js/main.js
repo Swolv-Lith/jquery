@@ -40,7 +40,7 @@ function counterInit() {
 function chronoInit() {
     var timeLeft = $('#time-digi').text()
     camp.one('focus', function() {
-        $("#botao-reiniciar").attr("disabled",true);
+        $("#restart").attr("disabled",true);
         var chronoID = setInterval(() => {
             timeLeft--
             $('#time-digi').text(timeLeft)
@@ -55,7 +55,7 @@ function chronoInit() {
 function finishGame() {
     camp.attr('disabled',true)
     // attr pega ou muda o atributo
-    $("#botao-reiniciar").attr("disabled", false);
+    $("#restart").attr("disabled", false);
     camp.addClass('disable-digi')
     insertScore()
 }
@@ -96,7 +96,7 @@ function insertScore() {
     var numWords = $('#counter-w').text()
 
     var line = newTr(user, numWords)
-    line.find('.remove').click(rmLine)
+    line.find('.remove-button').click(removeLine)
     tbody.prepend(line)
 
 }
@@ -107,8 +107,8 @@ function newTr(user, words) {
     var colWords = $('<td>').text(words)
     var colRemove = $('<td>')
 
-    var link = $('<a>').addClass('remove').attr('href', '#')
-    var icon = $('<i>').addClass('small').addClass('material-icons').text('delete-forever')
+    var link = $('<a>').addClass('remove-button').attr('href', '#')
+    var icon = $('<i>').addClass('small').addClass('material-icons').text('delete_forever')
 
     link.append(icon)
     colRemove.append(link)
@@ -120,9 +120,11 @@ function newTr(user, words) {
     return line
 }
 
-function rmLine(event) {
+$(".remove-button").click(removeLine)
+
+function removeLine(event) {
     event.preventDefault()
-    $(this).parent().parent().parent().remove()
+    $(this).parent().parent().remove()
 }
 
 // Versão enxuta da initMarks
