@@ -23,3 +23,11 @@
 .green-border{
     border: 3px solid green;
 }
+
+.score {
+    display: none;
+}
+
+body {
+    overflow: scroll
+}
