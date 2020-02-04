@@ -1,3 +1,9 @@
+$('#score').click(showScore)
+
+function showScore() {
+    $('.score').stop().slideToggle(600)
+}
+
 function insertScore() {
     var tbody = $('.score').find('tbody')
     // .find() procura o que for passado como parametro dentro da arvore
@@ -7,9 +13,9 @@ function insertScore() {
     var line = newTr(user, numWords)
     line.find('.remove-button').click(removeLine)
     tbody.prepend(line)
-
+    $('.score').slideDown(500)
+    scrollScore()
 }
-
 function newTr(user, words) {
     var line = $('<tr>')
     var colUser = $('<td>').text(user)
@@ -33,5 +39,15 @@ $(".remove-button").click(removeLine)
 
 function removeLine(event) {
     event.preventDefault()
-    $(this).parent().parent().remove()
+    var line = $(this).parent().parent()
+    line.fadeOut(1000)
+    setTimeout(function() {
+        line.remove()
+    }, 1000)
+}
+
+function scrollScore() {
+   var scorePosition =  $('.score').offset().top
+
+   $('html, body').animate({scrollTop: scorePosition}, 1000)
 }
