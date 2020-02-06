@@ -17,7 +17,7 @@ $(document).ready(function() {
     chronoInit()
     initMarks()
     $('#restart').click(restartGame)
-    $(".remove").click(rmLine)
+    $(".remove").click(removeLine)
 })
 
 function phraseSizeUpdate() {
@@ -25,6 +25,11 @@ function phraseSizeUpdate() {
     var numWords = phrase.split(' ').length
     var phraseSize = $('#phrase-size')
     phraseSize.text(numWords)
+}
+
+function initTimeUpdate(time) {
+    initialTime = time;
+    $("#time-digi").text(time);
 }
 
 function counterInit() {

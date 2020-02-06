@@ -31,3 +31,12 @@
 body {
     overflow: scroll
 }
+
+#error {
+    color: red;
+    display: none;
+}
+
+#spinner {
+    display: none;
+}
