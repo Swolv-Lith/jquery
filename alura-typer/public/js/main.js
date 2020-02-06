@@ -17,6 +17,7 @@ $(document).ready(function() {
     chronoInit()
     initMarks()
     $('#restart').click(restartGame)
+    $(".remove").click(rmLine)
 })
 
 function phraseSizeUpdate() {
