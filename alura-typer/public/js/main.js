@@ -89,6 +89,40 @@ function restartGame() {
     camp.removeClass('green-border')
 }
 
+function insertScore() {
+    var tbody = $('.score').find('tbody')
+    // .find() procura o que for passado como parametro dentro da arvore
+    var user = 'Tina'
+    var numWords = $('#counter-w').text()
+
+    var line = newTr(user, numWords)
+    line.find('.remove').click(rmLine())
+    tbody.prepend(line)
+
+}
+
+function newTr(user, words) {
+    var line = $('<tr>')
+    var colUser = $('<td>').text(user)
+    var colWords = $('<td>').text(words)
+    var colRemove = $('<td>')
+
+    var link = $('<a>').attr('href', '#').addClass('remove')
+    var icon = $('<i>').addClass('small').addClass('material-icons').text('delete-forever')
+
+    link.append(icon)
+    colRemove.append(link)
+
+    line.append(colUser)
+    line.append(colWords)
+    line.append(colRemove)
+}
+
+function rmLine(event) {
+    event.preventDefault()
+    $(this).parent().parent().parent().remove()
+}
+
 // Versão enxuta da initMarks
 
 // function initMarks() {
