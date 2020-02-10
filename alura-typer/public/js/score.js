@@ -78,3 +78,24 @@ function syncScore() {
     })
     console.log(score)
 }
+
+/* 
+    ~ msg de erro para o push 
+
+        var dados = {
+        placar: placar
+        };
+        $("#spinner").css('display', 'inline-block');
+
+        $.post("http://localhost:3000/placar", dados, function () {
+        $("#spinner").hide();
+        alert("Dados Salvos!");
+        }).fail(function () {
+        $("#spinner").hide();
+        $("#erroAjax").show();
+        setTimeout(function () {
+            $("#erroAjax").hide();
+        }, 5000);
+        });
+        }
+         */
