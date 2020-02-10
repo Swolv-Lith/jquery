@@ -1,4 +1,5 @@
 $('#phrase').click(randomPhrase)
+$('#search').click(searchPhrase)
 
 function randomPhrase() {
     $('#spinner').toggle()
@@ -21,4 +22,8 @@ function shuffleRandomPhrase(data) {
     phrase.text(data[randomNum].texto)
     phraseSizeUpdate()
     initTimeUpdate(data[randomNum].tempo);
+}
+
+function searchPhrase() {
+    let
 }

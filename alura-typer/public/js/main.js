@@ -3,8 +3,8 @@
  que resgata o elemento html e transforma
  em objeto com muitas outras funcionalidades
 */
-var initialTime = $('#time-digi').text()
-var camp = $('.digi')
+let initialTime = $('#time-digi').text()
+let camp = $('.digi')
 
 /*
     $(document).ready(function(){})
@@ -21,9 +21,9 @@ $(document).ready(function() {
 })
 
 function phraseSizeUpdate() {
-    var phrase = $('.phrase').text()
-    var numWords = phrase.split(' ').length
-    var phraseSize = $('#phrase-size')
+    let phrase = $('.phrase').text()
+    let numWords = phrase.split(' ').length
+    let phraseSize = $('#phrase-size')
     phraseSize.text(numWords)
 }
 
@@ -34,20 +34,20 @@ function initTimeUpdate(time) {
 
 function counterInit() {
     camp.on('input', function() {
-        var content = camp.val()
-        var qttWords = content.split(/\S+/).length -1
+        let content = camp.val()
+        let qttWords = content.split(/\S+/).length -1
         // expressão regular para deixar o jogo mais preciso na contagem
         $('#counter-w').text(qttWords)
-        var qttChars = content.length
+        let qttChars = content.length
         $('#counter-c').text(qttChars)
     })
 }
 
 function chronoInit() {
-    var timeLeft = $('#time-digi').text()
+    let timeLeft = $('#time-digi').text()
     camp.one('focus', function() {
         $("#restart").attr("disabled",true);
-        var chronoID = setInterval(() => {
+        let chronoID = setInterval(() => {
             timeLeft--
             $('#time-digi').text(timeLeft)
             if (timeLeft < 1) {
@@ -66,10 +66,10 @@ function finishGame() {
     insertScore()
 }
 function initMarks() {
-    var phrase = $('.phrase').text()
+    let phrase = $('.phrase').text()
     camp.on('input',function() {
-    var typed = camp.val()
-    var comparable = phrase.substr(0,typed.length)
+    let typed = camp.val()
+    let comparable = phrase.substr(0,typed.length)
     // substr é uma substring que pega parte da string do ponto inicial (primeiro parametro) até onde for determinado pelo segundo parâmetro
     if (typed == comparable) {
         camp.addClass('green-border')
@@ -98,8 +98,8 @@ function restartGame() {
 // Versão enxuta da initMarks
 
 // function initMarks() {
-//     var phrase = $('.phrase').text()
-//     var typed = camp.val()
+//     let phrase = $('.phrase').text()
+//     let typed = camp.val()
 //     camp.on('input',function() {
 //         if (phrase.startsWith(typed)) {
 //             camp.addClass('green-border')

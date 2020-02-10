@@ -40,3 +40,7 @@ body {
 #spinner {
     display: none;
 }
+
+#phrase-id {
+    width: 40px;
+}
