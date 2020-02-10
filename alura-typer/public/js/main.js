@@ -11,7 +11,7 @@ let camp = $('.digi')
     Chama as funções assim que a página carregar
     o atalho desse recurso é usar somente o $
 */
-$(document).ready(function() {
+$(document).ready(() => {
     phraseSizeUpdate()
     counterInit()
     chronoInit()
@@ -33,7 +33,7 @@ function initTimeUpdate(time) {
 }
 
 function counterInit() {
-    camp.on('input', function() {
+    camp.on('input', () => {
         let content = camp.val()
         let qttWords = content.split(/\S+/).length -1
         // expressão regular para deixar o jogo mais preciso na contagem
@@ -45,7 +45,7 @@ function counterInit() {
 
 function chronoInit() {
     let timeLeft = $('#time-digi').text()
-    camp.one('focus', function() {
+    camp.one('focus', () => {
         $("#restart").attr("disabled",true);
         let chronoID = setInterval(() => {
             timeLeft--
@@ -67,7 +67,7 @@ function finishGame() {
 }
 function initMarks() {
     let phrase = $('.phrase').text()
-    camp.on('input',function() {
+    camp.on('input',() => {
     let typed = camp.val()
     let comparable = phrase.substr(0,typed.length)
     // substr é uma substring que pega parte da string do ponto inicial (primeiro parametro) até onde for determinado pelo segundo parâmetro
