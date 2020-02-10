@@ -53,11 +53,28 @@ function removeLine(event) {
     event.preventDefault()
     let line = $(this).parent().parent()
     line.fadeOut(1000)
-    setTimeout(function() {
+    setTimeout(() => {
         line.remove()
     }, 1000)
 }
 
+/* ~ Função que sincroniza os dados do placar com o servidor! ~ */
 function syncScore() {
+    let score = []
+    let lines = $("tbody>tr")
+
+    lines.each(() => {
+        // nth-child() seletor avançado de CSS
+        let user = $(this).find("td:nth-child(1)").text()
+        let words = $(this).find("td:nth-child(2)").text()
+
+        let placar = {
+            usuario: user,
+            pontos: words
+        }
+
+        score.push(placar)
     
+    })
+    console.log(score)
 }
