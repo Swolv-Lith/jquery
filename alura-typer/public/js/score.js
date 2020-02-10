@@ -1,9 +1,20 @@
-$('#score').click(showScore)
+$('#button-score').click(showScore)
+$('#button-sync').click(syncScore)
+$(".remove-button").click(removeLine)
 
+/* ~ Função que mostra ou esconde o placar! ~ */
 function showScore() {
     $('.score').stop().slideToggle(600)
 }
 
+/* ~ Função que scrolla a página até o placar! ~ */
+function scrollScore() {
+    let scorePosition =  $('.score').offset().top
+ 
+    $('html, body').animate({scrollTop: scorePosition}, 1000)
+ }
+
+/* ~ Função que insere o novo dado no placar! ~ */
 function insertScore() {
     let tbody = $('.score').find('tbody')
     // .find() procura o que for passado como parametro dentro da arvore
@@ -16,6 +27,8 @@ function insertScore() {
     $('.score').slideDown(500)
     scrollScore()
 }
+
+/* ~ Função que constrói a nova TR para o dade recebido do jogo! ~ */
 function newTr(user, words) {
     let line = $('<tr>')
     let colUser = $('<td>').text(user)
@@ -35,8 +48,7 @@ function newTr(user, words) {
     return line
 }
 
-$(".remove-button").click(removeLine)
-
+/* ~ Função que remove TRs do placar! ~ */
 function removeLine(event) {
     event.preventDefault()
     let line = $(this).parent().parent()
@@ -46,8 +58,6 @@ function removeLine(event) {
     }, 1000)
 }
 
-function scrollScore() {
-   let scorePosition =  $('.score').offset().top
-
-   $('html, body').animate({scrollTop: scorePosition}, 1000)
+function syncScore() {
+    
 }
