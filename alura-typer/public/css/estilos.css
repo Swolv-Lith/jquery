@@ -41,15 +41,10 @@ body {
     display: none;
 }
 
-<<<<<<< Updated upstream
 #phrase-id {
     width: 40px;
 }
 
 #button-sync {
     float: right;
-=======
-#id-phrase {
-    width: 40px;
->>>>>>> Stashed changes
 }
